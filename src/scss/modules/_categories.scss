@@ -1,0 +1,24 @@
+.categories {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+
+    @include media-down(sm) {
+        font-size: 13px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 9px;
+        }
+
+        &--current {
+            font-weight: bold;
+            pointer-events: none;
+        }
+    }
+
+    span {
+        opacity: 0.5;
+    }
+}

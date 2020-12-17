@@ -1,0 +1,169 @@
+.about-header {
+    padding-top: 75px;
+
+    @include media-up(xl) {
+        overflow: visible;
+    }
+
+    @include media-down(sm) {
+        padding-top: 44px;
+    }
+
+    &__title {
+        color: $color-purple;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        max-width: 746px;
+    }
+
+    &__logo {
+        margin-top: 60px;
+
+        @include media-up(xl) {
+            position: relative;
+            left: -1px;
+            width: calc(100% + 2px);            
+        }
+
+        @include media-down(sm) {
+            margin-top: 42px;
+        }
+
+        img {
+            width: 100%;
+            display: none;
+
+            &:first-child {
+                @include media-up(md) {
+                    display: block;
+                }
+            }
+
+            &:last-child {
+                @include media-down(sm) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.about-mission {
+    padding: 96px 0;
+
+    @include media-down(sm) {
+        padding: 60px 0 30px;
+    }
+
+    &__container {
+        @include media-up(md) {
+            display: flex;
+        }
+    }
+
+    &__content {
+        @include media-up(md) {
+            width: 50%;
+        }
+    }
+
+    &__title {
+        color: $color-orange;
+        margin-bottom: 25px;
+
+        @include media-down(sm) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__text {
+        max-width: 411px;
+    }
+
+    &__logo {
+        @include media-up(md) {
+            width: 50%;
+            position: relative;
+            
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        @include media-up(lg) {
+            top: -70px;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.about-vision {
+    padding: 96px 0;
+    background: $color-green-2;
+
+    @include media-down(sm) {
+        padding: 56px 0 46px;
+    }
+
+    &__container {
+        @include media-up(md) {
+            display: flex;
+        }
+    }
+
+    &__content {
+        @include media-up(md) {
+            width: 50%;
+        }
+    }
+
+    &__title {
+        color: #fff;
+        margin-bottom: 25px;
+
+        @include media-down(sm) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__text {
+        color: #fff;
+        max-width: 411px;
+    }
+
+    &__logo {
+        @include media-up(md) {
+            order: -1;
+            width: 50%;
+            position: relative;
+            left: -40px;
+            
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        @include media-up(lg) {
+            top: -30px;
+        }
+
+        @include media-down(sm) {
+            margin-top: 17px;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.filter {
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+
+    &__current {
+        cursor: pointer;
+        font-weight: bold;
+        position: relative;
+        padding-right: 10px;
+        color: $color-main;
+        transition: color .2s ease;
+
+        &:hover {
+            color: $color-yellow;
+        }
+
+        &:after {
+            content: '^';
+            position: absolute;
+            font-size: 130%;
+            transform: scale(1, -1);
+            right: -3px;
+            top: -3px;
+        }
+
+        .filter--opened & {
+            color: $color-yellow;
+
+            &:after {
+                transform: rotate(0);
+                top: 3px;
+            }
+        }
+    }
+
+    &__items {
+        position: absolute;
+        z-index: 100;
+        left: -10px;
+        top: 25px;
+        min-width: 140px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-5px);
+        transition: .25s ease;
+        background: #fff;
+        border: 1px solid $border;
+
+        li {
+            width: 100%;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(65, 64, 83, 0.15);
+            }
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            padding: 7px 10px;
+            color: $color-main;
+
+            &:hover {
+                background-color: #f1f1f1;
+            }
+        }
+
+        .filter--opened & {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.fancybox-bg {
+    background: rgba(65, 64, 83, 0.7);
+}
+
+.fancybox-slide {
+    padding: 0;
+}
+
+.fancybox-close-small {
+    @include media-up(md) {
+        width: 55px;
+        height: 55px;        
+    }
+
+    @include media-down(sm) {
+        top: 10px !important;
+    }
+}

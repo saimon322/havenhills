@@ -1,0 +1,56 @@
+@media all and (-ms-high-contrast:none) {
+    body {
+        display: block;
+    }
+
+    .site-main {
+        display: block;
+        flex: none;
+
+        .site-container {
+            display: block;
+            flex: none;
+        }
+    }
+
+    .wow {
+        visibility: visible;
+    }
+
+    .service {
+        display: block;
+    }
+
+    .blog {
+        overflow: hidden;
+    }
+
+    .blog-aside__inner {
+        position: unset;
+    }
+
+    .blog-item {
+        flex: none;
+
+        article {
+            display: block;
+        }
+    }
+
+    .faq-item {
+        display: block;
+    }
+
+    .volunteer {
+        display: block;
+
+        &__logo {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .page404 {
+        height: calc(100vh - 170px);
+    }
+}

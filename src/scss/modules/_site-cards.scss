@@ -1,0 +1,81 @@
+.site-cards {
+    padding: 68px 0 60px;
+    background: $color-purple;
+    border-bottom: 1px solid $border;
+
+    @include media-down(sm) {
+        padding: 48px 0;
+        border-bottom: 0;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-down(sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.site-card {
+    display: flex;
+    flex-direction: column;
+    width: 278px;
+    padding: 20px;
+    padding-bottom: 25px;
+    background: #FFFFFF;
+    border-radius: 15px;
+
+    @include media-down(sm) {
+        width: 100%;
+        max-width: 335px;
+        padding: 20px 25px 23px;
+    }
+
+    &:not(:last-child) {
+        margin-right: 20px;
+
+        @include media-down(sm) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+        height: 158px;
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        @include media-down(sm) {
+            height: 145px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+    }
+
+    &__title {
+        @include title;
+        color: $color-main;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        transition: color .2s ease;
+    }
+
+    &:hover &__logo img {
+        transform: scale(1.1);
+    }
+
+    &:hover &__title {
+        color: $color-yellow;
+    }
+}

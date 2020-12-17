@@ -1,0 +1,26 @@
+$grid-breakpoints: (xxs: 0, xs: 350px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1500px);
+
+// Fonts
+$font: "Barlow Condensed", sans-serif;
+
+// Colors
+$color-main:      #414053;
+$color-main-2:    #3F3E51;
+$color-yellow:    #F5CA73;
+$color-yellow-2:  #F9D593;
+$color-orange:    #DE6649;
+$color-orange-2:  #DD674A;
+$color-purple:    #5E5394;
+$color-purple-2:  #443776;
+$color-green:     #4EAC5F;
+$color-green-2:   #53AB61;
+$color-cyan:      #4789B6;
+$color-cyan-2:    #4387B4;
+
+$color-08: rgba(65, 64, 83, 0.8);
+
+// Borders
+$border: rgba(65, 64, 83, 0.5);
+
+// Shadows
+$shadow: 0px 4px 4px rgba(65, 62, 83, 0.3);

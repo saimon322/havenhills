@@ -1,0 +1,55 @@
+.search {
+    height: 77px;
+    border-bottom: 1px solid $border;
+    position: relative;
+
+    @include media-down(sm) {
+        height: 68px;
+        border-top: 1px solid $border;
+    }
+
+    &__input {
+        height: 100%;
+        border: 0;
+        padding-left: 35px;
+        padding-right: 80px;
+
+        @include media-down(sm) {
+            padding-left: 24px;
+        }
+
+        &::placeholder {
+            color: rgba(65, 64, 83, 0.7);
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        width: 65px;
+        height: 63px;
+        background-color: $color-purple-2;
+        background-image: url(../img/bg/search.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border-radius: 5px;
+        transition: background-color .25s ease;
+
+        @include media-down(sm) {
+            top: 12px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+        }
+
+        &:hover {
+            background-color: $color-yellow;
+        }
+    }
+}

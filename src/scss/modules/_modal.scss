@@ -1,0 +1,21 @@
+.modal {
+    display: none;
+    width: 700px;
+    padding: 65px 58px;
+    
+    @include media-down(sm) {
+        width: 100%;
+        height: 100vh;
+        padding: 49px 24px;
+    }
+
+    &__title {
+        font-weight: 600;
+        margin-bottom: 22px;
+    }
+
+    &__text {
+        font-size: 14px;
+        color: $color-08;
+    }
+}

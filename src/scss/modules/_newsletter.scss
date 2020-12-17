@@ -1,0 +1,136 @@
+.newsletter {
+    margin-bottom: 25px;
+
+    @include media-down(sm) {
+        margin-bottom: 0;
+    }
+
+    &__main {
+        background: $color-purple;
+        padding: 60px 0;
+
+        @include media-down(sm) {
+            padding: 17px 0 78px;
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        margin-bottom: 60px;
+
+        @include media-down(sm) {
+            display: block;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__title {
+        @include title;
+        font-size: 40px;
+        line-height: 40px;
+
+        @include media-down(sm) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text {
+        max-width: 430px;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 19px;
+        position: relative;
+
+        @include media-down(md) {
+            max-width: 380px;
+        }
+
+        @include media-down(sm) {
+            max-width: 100%;
+            font-weight: 500;
+            line-height: 24px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: -75px; top: 20px;
+            display: block;
+            width: 27px; height: 10px;
+            background: url(img/svg-sprite/icon-arrow-white.svg) center no-repeat;
+            transition: transform .2s ease;
+
+            @include media-down(sm) {
+                display: none;
+            }
+        }
+
+        &:hover:before {
+            transform: translateX(15px);
+        }
+    }
+
+    &__form {
+        .fields-list {
+            margin-right: 30px;
+
+            @include media-down(sm) {
+                margin-right: 0;
+                margin-bottom: 46px;
+            }
+
+            &__item {
+                &:not(:last-child) {
+                    margin-right: 23px;
+
+                    @include media-down(sm) {
+                        margin-right: 0;
+                        margin-bottom: 34px;
+                    }
+                }
+            }
+        }
+
+        label {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        input, textarea {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+
+            &:focus {
+                border-color: #fff;
+                
+                & ~ label {
+                    color: #fff;
+                }
+            }
+        }
+
+        .button {
+            padding: 0 30px;
+            border: 0;
+    
+            &:hover {
+                background-color: $color-yellow;
+            }
+        }
+    }
+
+    &__bottom {
+        background-color: $color-yellow;
+        height: 83px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @include title;
+        font-size: 28px;
+        line-height: 56px;
+        color: $color-purple;
+    }
+}

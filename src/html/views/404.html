@@ -1,0 +1,24 @@
+<%=_.template(require('../parts/main-header.html'))({
+    title: "Haven Hills | 404",
+    menu: {}
+}) %>
+
+<main class="site-main">
+    <div class="site-container">
+        <section class="page404">
+            <div class="page404__logo">
+                <img src="img/bg/404.jpg" alt="">
+            </div>
+            <div class="page404__content">
+                <h1 class="visually-hidden">404</h1>
+                <div class="page404__title">
+                    <img src="img/base/404.svg" alt="">
+                </div>
+                <p class="page404__text">
+                    The page you are looking for does not exist. Please go back to the main page.
+                </p>
+                <a href="/" class="button page404__button">Go to homepage</a>
+            </div>
+        </section>
+    </div>
+</main><!-- / .site-main -->

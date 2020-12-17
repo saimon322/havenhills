@@ -1,0 +1,49 @@
+.hamburger {
+    width: 15px;
+    height: 16px;
+    position: relative;
+
+    b {
+        width: 15px;
+        height: 2px;
+        background: $color-main;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        transition: .3s ease;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 7px;
+        }
+
+        &:nth-child(4) {
+            top: 14px;
+        }
+    }
+
+    .main-header__menu-btn.active & b {
+        background: #fff;
+        width: 20px;
+        top: 8px;
+        left: -2px;
+        
+        &:nth-child(1),
+        &:nth-child(4) {
+            left: 50%;
+            width: 0;
+        }
+
+        &:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+    }
+}

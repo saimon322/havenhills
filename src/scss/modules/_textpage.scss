@@ -1,0 +1,40 @@
+.textpage {
+    max-width: 888px;
+    margin: 0 auto;
+    padding: 60px 0 80px;
+
+    @include media-down(sm) {
+        padding: 44px 0 53px;
+    }
+
+    h1  {
+        font-size: 32px;
+        color: $color-purple-2;
+        margin-bottom: 7px;
+
+        @include media-down(sm) {
+            font-size: 24px;
+            line-height: 42px;
+        }
+
+        @include media-down(xxs) {
+            font-size: 22px;
+            line-height: 38px;
+        }
+    }
+
+    .page-info {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        @include media-down(sm) {
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+    }
+
+    p:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}

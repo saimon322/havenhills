@@ -1,0 +1,9 @@
+.label-group {
+    margin: 20px 0 30px;
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

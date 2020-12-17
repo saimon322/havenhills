@@ -1,0 +1,12 @@
+.form {
+    display: flex;
+
+    @include media-down(sm) {
+        display: block;
+    }
+
+    &__text {
+        font-size: 14px;
+        color: rgba(65, 64, 83, 0.7);
+    }
+}

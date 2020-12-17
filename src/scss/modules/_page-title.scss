@@ -1,0 +1,47 @@
+.page-title {
+    padding: 60px 90px 44px;
+    color: $color-purple-2;
+    border-bottom: 1px solid $border;
+
+    @include media-down(lg) {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    @include media-down(md) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @include media-down(sm) {
+        padding: 44px 20px 20px;
+        border: 0;
+    }
+
+    &--center {
+        @include media-up(md) {
+            text-align: center;
+        }
+    }
+}
+
+.page-title-2 {
+    color: $color-yellow;
+    padding: 74px 90px 28px;
+    text-align: center;
+
+    @include media-down(lg) {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    @include media-down(md) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @include media-down(sm) {
+        padding: 34px 20px 23px;
+        text-align: left;
+    }
+}

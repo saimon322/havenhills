@@ -1,0 +1,112 @@
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min !=0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+    $next: breakpoint-next($name, $breakpoints);
+    @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, "", "-#{$name}");
+}
+
+@mixin media-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+@mixin media-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+@mixin media-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($lower, $breakpoints);
+    $max: breakpoint-max($upper, $breakpoints);
+
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin media-only($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    $max: breakpoint-max($name, $breakpoints);
+
+    @if $min !=null and $max !=null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+
+    @else if $max==null {
+        @include media-up($name)
+    }
+
+    @else if $min==null {
+        @include media-down($name)
+    }
+}
+
+@mixin title {
+    font-family: $font;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@mixin list {
+    font-weight: 500;
+
+    li {
+        position: relative;
+        padding-left: 70px;
+    
+        @include media-down(sm) {
+            padding-left: 48px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px;
+            display: block;
+            width: 27px; height: 10px;
+            background: url(img/svg-sprite/icon-arrow.svg) center no-repeat;
+            transition: transform .2s ease;
+        }
+
+        &:hover:before {
+            transform: translateX(15px);
+        }
+    }   
+}
