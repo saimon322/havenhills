@@ -1,0 +1,48 @@
+.languages {
+    counter-reset: language;
+    max-width: 600px;
+}
+
+.language {
+    display: flex;
+    align-items: flex-end;
+    counter-increment: language;
+    position: relative;
+    padding-left: 30px;
+
+    @include media-down(sm) {
+        display: block;
+    }
+
+    &:before {
+        content: counter(language)'.';
+        position: absolute;
+        left: 0;
+        top: 10px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &__name {
+        flex: 1 1 0;
+    }
+
+    &__levels {
+        display: flex;
+
+        @include media-down(sm) {
+            margin-top: 15px;
+        }
+    }
+
+    &__level {
+        padding-left: 20px;
+
+        @include media-down(sm) {
+            padding-left: 0;
+            margin-right: 20px;
+        }
+    }
+}

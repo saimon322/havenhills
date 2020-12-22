@@ -35,7 +35,7 @@
 
 .difference {
     width: 100%;
-    padding: 32px 58px 48px 58px;
+    padding: 32px 56px 48px 58px;
     border-bottom: 1px solid $border;
     display: flex;
 
@@ -67,6 +67,12 @@
                     padding-top: 0;
                 }
             }
+        }
+    }
+
+    &--half &__text {
+        @include media-up(lg) {
+            max-width: 316px;
         }
     }
 

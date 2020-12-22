@@ -8,31 +8,18 @@
 <head>
     <!-- Meta -->
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
-    <!-- SEO -->
-    <title>Haven Hills | Stop Domestic Violence, Build Self-Reliance, Save Lives</title>
-    <meta name="description" content="Stop Domestic Violence, Build Self-Reliance, Save Lives">
-    <meta name="keywords" content="domestic, violence, live, lgbt">
-    <!-- OG -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Haven Hills">
-    <meta property="og:description" content="Stop Domestic Violence, Build Self-Reliance, Save Lives">
-    <meta property="og:image" content="https://havenhills.org/wp-content/uploads/2018/06/frontbanner.jpg">
-    <meta property="og:url" content="https://havenhills.org/">
-    <meta property="og:site_name" content="Haven Hills | Stop Domestic Violence, Build Self-Reliance, Save Lives">
-    <!-- Preloading fonts -->
-    <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/BarlowCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/BarlowCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <!-- Styles -->
-    <link rel="stylesheet" href="/wp-content/themes/havenhills/dist/style.css">
     <?php wp_head(); ?>
+
+    <!-- Preloading fonts -->
+    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/BarlowCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/BarlowCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">  
 </head>
 <body>
 
@@ -79,28 +66,25 @@
                         <li class="menu-item-has-children">
                             <a href="#">English</a>
                             <ul class="sub-menu">
-                                <li><a href="#">Español</a></li>
+                                <li><a href="#">EspaĆ±ol</a></li>
                             </ul>
                         </li>
                     </ul>
                 </nav><!-- / .main-header__nav -->
 
                 <div class="main-header__socials">
-                    <a href="https://www.facebook.com/havenhills" target="_blank" rel="noopener noreferrer">
+                    <?php if( have_rows('socials', 'option') ): ?>
+                    <?php while( have_rows('socials', 'option') ): the_row();
+                    $name = get_sub_field('social_name');
+                    $link = get_sub_field('social_url');
+                    ?>
+                    <a href="<?php echo $link; ?>" target="_blank" rel="noopener noreferrer">
                         <svg width='15' height='15'>
-                            <use xlink:href='#icon-facebook'></use>
+                            <use xlink:href='#icon-<?php echo $name; ?>'></use>
                         </svg>
                     </a>
-                    <a href="https://twitter.com/havenhills" target="_blank" rel="noopener noreferrer">
-                        <svg width='15' height='15'>
-                            <use xlink:href='#icon-twitter'></use>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/havenhills/" target="_blank" rel="noopener noreferrer">
-                        <svg width='15' height='15'>
-                            <use xlink:href='#icon-instagram'></use>
-                        </svg>
-                    </a>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </div><!-- /.main-header__socials -->
             </div><!-- /.main-header__menu -->
 

@@ -46,20 +46,21 @@ $border-footer-mobile: rgba(255, 255, 255, 0.2);
     }
 
     &__bottom {
-        padding: 20px 50px 30px 90px;
+        padding: 20px 68px 30px 90px;
         border-top: 1px solid $border-footer;
         display: flex;
 
         @include media-down(lg) {
             padding-left: 70px;
+            padding-right: 140px;
         }
 
         @include media-down(md) {
             padding-left: 50px;
+            display: block;
         }
 
         @include media-down(sm) {
-            flex-direction: column;
             padding: 0;
             border-top: 0;
         }
@@ -81,12 +82,31 @@ $border-footer-mobile: rgba(255, 255, 255, 0.2);
         }
     }
 
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__info-block {
+        margin-top: 20px;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
     &__socials {
         display: flex;
         margin-top: 25px;
 
         @include media-down(sm) {
             margin-top: 40px;
+            order: 1;
         }
 
         a {
@@ -125,8 +145,6 @@ $border-footer-mobile: rgba(255, 255, 255, 0.2);
             }
         }
 
-        
-
         a {
             font-weight: bold;
 
@@ -143,21 +161,33 @@ $border-footer-mobile: rgba(255, 255, 255, 0.2);
         width: 456px;
         margin-right: 125px;
 
+        @include media-down(lg) {
+            margin-bottom: 10px;
+        }
+
         @include media-down(md) {
             width: 380px;
-            margin-right: 70px;
         }
 
         @include media-down(sm) {
             width: 100%;
-            margin-right: 0;
+            margin: 0;
             padding: 20px 20px 30px;
             border-top: 1px solid $border-footer-mobile;
         }
     }
 
     &__taxes {
+        @include media-down(lg) {
+            width: 456px;
+        }
+
+        @include media-down(md) {
+            width: 380px;
+        }
+
         @include media-down(sm) {
+            width: 100%;
             order: -1;
             padding: 20px 20px 30px;
             border-top: 1px solid $border-footer-mobile;

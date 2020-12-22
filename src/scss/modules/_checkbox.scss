@@ -1,31 +1,52 @@
 .checkbox {
-    &__label {
+    label {
         position: relative;
         display: block;
         padding-left: 25px;
+        min-height: 24px;
         cursor: pointer;
 
         &:before {
             content: "";
             position: absolute;
-            top: 5px;
+            top: 3px;
             left: 0;
-            width: 13px;
-            height: 13px;
+            width: 16px;
+            height: 16px;
             background: #F4F4FB;
             box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.05);
             border-radius: 3px;
         }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 5px;
+            width: 6px;
+            height: 6px;
+            background: $color-main-2;
+            transform: scale(0);
+            opacity: 0;
+            transition: .25s ease;
+        }
     }
 
-    &__field:checked + &__label:after {
-        content: "";
+    input {
         position: absolute;
-        top: 5px;
-        left: 2px;
-        width: 13px;
-        height: 13px;
-        background: url(img/bg/check.svg) no-repeat 50%;
-        background-size: contain;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    input:checked + label:after {
+        transform: scale(1);
+        opacity: 1;
     }
 }

@@ -102,11 +102,6 @@
             display: block;
             width: 27px; height: 10px;
             background: url(img/svg-sprite/icon-arrow.svg) center no-repeat;
-            transition: transform .2s ease;
-        }
-
-        &:hover:before {
-            transform: translateX(15px);
         }
     }   
 }

@@ -1,7 +1,7 @@
 .modal {
     display: none;
     width: 700px;
-    padding: 65px 58px;
+    padding: 60px;
     
     @include media-down(sm) {
         width: 100%;
@@ -17,5 +17,31 @@
     &__text {
         font-size: 14px;
         color: $color-08;
+
+        img {
+            max-width: 100%;
+            margin: 30px auto;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            list-style: unset;
+            padding-left: 20px;
+        }
+    }
+
+    &--full {
+        padding: 0;
+
+        &__text {
+            padding: 50px;
+        }
     }
 }

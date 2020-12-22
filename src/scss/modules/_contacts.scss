@@ -1,6 +1,10 @@
 .contacts {
     padding: 69px 0 76px;
 
+    @include media-up(md) {
+        font-size: 18px;
+    }
+
     @include media-down(sm) {
         padding: 44px 0 68px;
     }
@@ -31,6 +35,12 @@
         margin-bottom: 30px;
     }
 
+    &__text {
+        @include media-up(md) {
+            line-height: 34px;
+        }
+    }
+
     &__logo {
         flex: 1 1 0;
         position: relative;
@@ -53,57 +63,16 @@
 
     &__form {
         max-width: 610px;
-        display: block;
 
         .fields-list {
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-
-            &__item {
-                &:first-child {
-                    margin-right: 28px;
-                }
-
-                &:last-child {
-                    flex: none;
-                    width: 100%;
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: 36px;
-
-                    @include media-down(sm) {
-                        margin-right: 0;
-                        margin-bottom: 30px;
-                    }
-                }
-            }
-
-            input, textarea {
-                &:focus,
-                &.is-filled {
-                    border-color: rgba(65, 64, 83, 0.2);
-                    
-                    & ~ label {
-                        color: $border;
-                    }
-                }
-            }
+            margin-top: 0;
         }
 
-        strong {
-            font-weight: 600;
-        }
-
-        .button {
-            padding: 0 25px;
-            border: 0;
-            background-color: $color-main;
-            color: #fff;
-            margin-top: 30px;
-    
-            &:hover {
-                background-color: $color-yellow;
+        p {
+            &:not(:last-child) {
+                @include media-up(md) {
+                    margin-bottom: 25px;
+                }
             }
         }
     }

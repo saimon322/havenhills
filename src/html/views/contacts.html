@@ -10,7 +10,7 @@
                 <div class="contacts__header">
                     <div class="contacts__main wow fadeIn">
                         <h1 class="contacts__title">Contact us</h1>
-                        <div class="contacts__title">
+                        <div class="contacts__text">
                             <p>
                                 <strong>If you need immediate help, please call 911 or our 24/7 Crisis Line at 818.887.6589.</strong>
                             </p>
@@ -28,57 +28,64 @@
                 </div>
 
                 <form action="#" class="form contacts__form wow fadeIn" data-wow-offset="100">
-                    <ul class="form__fields-list fields-list">
-                        <li class="fields-list__item">
-                            <input type="text" name="name" id="contacts-name">
-                            <label for="contacts-name">Full Name</label>
-                        </li>
-                        <li class="fields-list__item">
-                            <input type="email" name="email" id="contacts-email">
-                            <label for="contacts-email">Email Address</label>
-                        </li>
-                        <li class="fields-list__item">
-                            <textarea name="question" id="contacts-question"></textarea>
-                            <label for="contacts-question">How can we help you?</label>
-                        </li>
-                    </ul>
+                    <div class="form__block">
+                        <ul class="form__fields-list fields-list">
+                            <li class="fields-list__item fields-list__item--half">
+                                <input type="text" name="name" id="contacts-name">
+                                <label for="contacts-name">Full Name</label>
+                            </li>
+                            <li class="fields-list__item fields-list__item--half">
+                                <input type="email" name="email" id="contacts-email">
+                                <label for="contacts-email">Email Address</label>
+                            </li>
+                            <li class="fields-list__item">
+                                <textarea name="question" id="contacts-question"></textarea>
+                                <label for="contacts-question">How can we help you?</label>
+                            </li>
+                        </ul>
+                    </div><!-- /.form__block -->
 
-                    <p>
-                        <strong>Which best describes your reason for contacting Haven Hills?</strong>
-                    </p>
+                    <div class="form__block">
+                        <p>
+                            <strong>Which best describes your reason for contacting Haven Hills?</strong>
+                        </p>
+                        <div class="form__label-group label-group">
+                            <div class="checkbox label-group__item">
+                                <input id="contacts-reason-1" type="checkbox" value="I'm interested in Haven Hills' services">
+                                <label for="contacts-reason-1">
+                                    I'm interested in Haven Hills' services
+                                </label>
+                            </div>
+                            <div class="checkbox label-group__item">
+                                <input id="contacts-reason-2" type="checkbox" value="I'd like more info about the 40-Hour Domestic Violence training">
+                                <label for="contacts-reason-2">
+                                    I'd like more info about the 40-Hour Domestic Violence training
+                                </label>
+                            </div>
+                            <div class="checkbox label-group__item">
+                                <input id="contacts-reason-3" type="checkbox" value="I would like to donate in-kind items*">
+                                <label for="contacts-reason-3">
+                                    I would like to donate in-kind items*
+                                </label>
+                            </div>
+                            <div class="checkbox label-group__item">
+                                <input id="contacts-reason-4" type="checkbox" value="I need immediate help">
+                                <label for="contacts-reason-4">
+                                    I need immediate help
+                                </label>
+                            </div>
+                        </div>
+                    </div><!-- /.form__block -->
 
-                    <div class="form__label-group label-group">
-                        <div class="checkbox label-group__item">
-                            <input class="visually-hidden checkbox__field" id="contacts-form-reason-1" type="checkbox" value="I'm interested in Haven Hills' services">
-                            <label class="checkbox__label" for="contacts-form-reason-1">
-                                I'm interested in Haven Hills' services
-                            </label>
-                        </div>
-                        <div class="checkbox label-group__item">
-                            <input class="visually-hidden checkbox__field" id="contacts-form-reason-2" type="checkbox" value="I'd like more info about the 40-Hour Domestic Violence training">
-                            <label class="checkbox__label" for="contacts-form-reason-2">
-                                I'd like more info about the 40-Hour Domestic Violence training
-                            </label>
-                        </div>
-                        <div class="checkbox label-group__item">
-                            <input class="visually-hidden checkbox__field" id="contacts-form-reason-3" type="checkbox" value="I would like to donate in-kind items*">
-                            <label class="checkbox__label" for="contacts-form-reason-3">
-                                I would like to donate in-kind items*
-                            </label>
-                        </div>
-                        <div class="checkbox label-group__item">
-                            <input class="visually-hidden checkbox__field" id="contacts-form-reason-4" type="checkbox" value="I need immediate help">
-                            <label class="checkbox__label" for="contacts-form-reason-4">
-                                I need immediate help
-                            </label>
-                        </div>
+                    <div class="form__banner">
+                        Call 911 or our 24/7 Crisis Line at <a href="tel:818-887-7481">818-887-7481</a>.
                     </div>
 
-                    <div class="form__text">
+                    <div class="form__hint">
                         *Due to space constraints and sanitary reasons, we only accept new items, not used or gently used items. Thank you for understanding.
                     </div>
 
-                    <button type="submit" class="button">Submit</button>
+                    <button type="submit" class="button form__button">Submit</button>
                 </form>
             </div>
         </section>

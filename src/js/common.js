@@ -2,6 +2,7 @@ import { WOW } from 'wowjs';
 const autosize = require('autosize/dist/autosize');
 import 'hammerjs';
 import '@fancyapps/fancybox/dist/jquery.fancybox.min';
+import Swiper from 'swiper/swiper-bundle.min.js';
 import './svg-sprite';
 
 $(document).ready(function () {
@@ -12,19 +13,11 @@ $(document).ready(function () {
         live: false
     });
     wow.init();
-    
-    // init modal fancybox
-    $('.btn-modal').fancybox({
-        touch: false,
-        backFocus: false,
-        afterLoad: function(){
-            var target = $.fancybox.getInstance().current.opts.$orig,
-                faqItem = $(target).parents(".faq-item"),
-                title = faqItem.find(".faq-item__title").html(),
-                text = faqItem.find(".faq-item__text").html();
-            $(".modal__title").html(title);
-            $(".modal__text").html(text);
-        }
+
+    // init fancybox
+    $("[data-fancybox]").fancybox({
+        loop: true,
+        infobar : false,
     });
 
     $(window).on('resize', function () {
@@ -138,9 +131,6 @@ $(document).ready(function () {
     });
 
     if ($('.blog').length) {
-        // remove donate button
-        $(".donate-button").hide();
-
         // add swiper events
         var myElement = document.getElementsByClassName('blog-aside');
         var mc = new Hammer(myElement[0]);
@@ -163,6 +153,56 @@ $(document).ready(function () {
         }
         else if (scrollBottom) {
             scrollBottom = false;
+        }
+    });
+
+    // Contacts banner
+    $("#contacts-reason-4").on("change", function(){
+        if ($(this).is(":checked")) {
+            $(".form__banner").fadeIn();
+        } else {
+            $(".form__banner").hide();
+        }
+    });
+    
+    // faq modal fancybox
+    $('.faq-item__button').fancybox({
+        touch: false,
+        backFocus: false,
+        afterLoad: function(){
+            var target = $.fancybox.getInstance().current.opts.$orig,
+                faqItem = $(target).parents(".faq-item"),
+                title = faqItem.find(".faq-item__title").html(),
+                text = faqItem.find(".faq-item__text").html();
+            $(".modal__title").html(title);
+            $(".modal__text").html(text);
+        }
+    });
+
+    // letters swiper
+    let swiper = new Swiper((".letters__slider"), {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button--next",
+            prevEl: ".swiper-button--prev",
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets'
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 'auto',
+                spaceBetween: 40,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            }
         }
     });
 

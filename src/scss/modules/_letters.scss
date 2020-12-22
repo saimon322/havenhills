@@ -1,0 +1,101 @@
+.letters {
+    padding: 90px 0 70px;
+    border-bottom: 1px solid $border;
+
+    @include media-down(sm) {
+        padding: 55px 0 60px;
+    }
+
+    .site-container {
+        border: 0;
+    }
+
+    &__title {
+        text-align: center;
+        color: $color-green-2;
+        position: relative;
+        margin-bottom: 50px;
+
+        @include media-down(md) {
+            br {
+                display: none;
+            }
+        }
+
+        @include media-down(sm) {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider {
+        padding: 0 50px;
+
+        @include media-down(lg) {
+            max-width: 722px;
+            margin: 0 auto;
+        }
+
+        @include media-down(sm) {
+            padding: 0 20px;
+        }
+    }
+
+    & ~ .site-container {
+        @include media-up(xl) {
+            padding-bottom: 45px;
+        }
+    }
+}
+
+.letter {
+    width: 286px !important;
+
+    @include media-down(sm) {
+        width: 254px !important;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        outline: none;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        display: none;
+
+        @include media-down(sm) {
+            padding-top: 67px;
+        }
+    }
+
+    &__buttons {
+        margin-top: 35px;
+
+        @include media-down(sm) {
+            margin-top: 45px;
+        }
+    }
+
+    &__img-button {
+        margin-right: 8px;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    &:nth-child(3n + 1) &__img-button:not(:hover) {
+        background: $color-orange;
+    }
+
+    &:nth-child(3n + 2) &__img-button:not(:hover) {
+        background: $color-purple;
+    }
+
+    &:nth-child(3n + 3) &__img-button:not(:hover) {
+        background: $color-cyan;
+    }
+}

@@ -1,9 +1,8 @@
 .volunteers {
-    margin-bottom: 54px;
+    margin-bottom: 80px;
 
     @include media-down(sm) {
-        margin-bottom: 22px;
-        border: 0;
+        margin-bottom: 40px;
     }
 
     &__text {
@@ -45,24 +44,34 @@
         }
     }
 
-    &__footer {
+    &__info {
         padding: 30px 0;
-        background: $color-purple-2;
         color: #fff;
         font-weight: 500;
+        position: relative;
+        margin-bottom: 75px;
 
-        a {   
+        @include media-down(sm) {
+            margin-bottom: 30px;
+        }
+
+        a {
             white-space: nowrap;
-            color: #fff;
-            font-weight: 600;
 
-            @include media-down(sm) {
-                font-weight: bold;
+            &:not(:hover) {
+                color: #fff;
             }
+        }
 
-            &:hover {
-                color: $color-yellow;
-            }
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: -50vw; top: 0;
+            display: block;
+            width: 150vw;
+            height: 100%;
+            background: $color-purple-2;
         }
     }
 }

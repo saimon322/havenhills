@@ -3,6 +3,7 @@
    ========================================================================== */
 @import "~normalize.css/normalize.css";
 @import "~animate.css/animate.min.css";
+@import "~swiper/swiper-bundle.css";
 @import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
 @import "~smartwizard/dist/css/smart_wizard.min.css";
 
@@ -27,13 +28,12 @@
 @import "modules/page-title";
 @import "modules/form";
 @import "modules/fields-list";
-@import "modules/label-group";
-@import "modules/checkbox";
 @import "modules/donate-button";
 @import "modules/filter";
 @import "modules/pagination";
 @import "modules/fancybox";
 @import "modules/modal";
+@import "modules/swiper";
 
 /* ==========================================================================
    HOME PAGE
@@ -58,7 +58,7 @@
    ABOUT PAGE
    ========================================================================== */
 @import "modules/about";
-@import "modules/employees";
+@import "modules/directors";
 
 /* ==========================================================================
    TEXT PAGE
@@ -74,12 +74,15 @@
    CONTACTS PAGE
    ========================================================================== */
 @import "modules/contacts";
+@import "modules/checkbox";
+@import "modules/label-group";
 
 /* ==========================================================================
-   BLOG PAGE
+   BLOG PAGES
    ========================================================================== */
 @import "modules/blog";
 @import "modules/blog-post";
+@import "modules/text-block";
 @import "modules/categories";
 @import "modules/other-articles";
 
@@ -87,12 +90,21 @@
    VOLUNTEERS PAGE
    ========================================================================== */
 @import "modules/volunteers";
+@import "modules/table";
+@import "modules/languages";
 
 /* ==========================================================================
    FAQ PAGE
    ========================================================================== */
 @import "modules/search";
 @import "modules/faq";
+
+/* ==========================================================================
+   STORIES PAGES
+   ========================================================================== */
+@import "modules/stories";
+@import "modules/story";
+@import "modules/letters";
 
 /* ==========================================================================
    404 PAGE

@@ -61,6 +61,12 @@
         }
     }
 
+    &__text {
+        span {
+            white-space: nowrap;
+        }
+    }
+
     &__buttons {
         margin-top: 40px;
         display: flex;

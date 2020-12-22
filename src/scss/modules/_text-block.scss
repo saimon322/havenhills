@@ -1,0 +1,29 @@
+.text-block {
+    margin-top: 60px;
+    padding: 30px 0;
+    position: relative;
+
+    @include media-down(sm) {
+        padding: 30px 20px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -25px;
+        left: -55px;
+        width: calc(100% + 110px);
+        height: calc(100% + 40px);
+        border: 10px solid #DE6649;
+
+        @include media-down(md) {
+            left: -30px;
+            width: calc(100% + 60px);
+        }
+
+        @include media-down(sm) {
+            left: -20px;
+            width: calc(100% + 40px);
+        }
+    }
+}

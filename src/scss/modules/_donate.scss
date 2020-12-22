@@ -69,12 +69,20 @@
 
 .donate-cards {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 66px;
     border-top: 1px solid $border;
 
     @include media-down(sm) {
         margin-top: 62px;
         display: block;
+    }
+
+    &__title {
+        width: 100%;
+        padding: 30px 0;
+        text-align: center;
+        border-bottom: 1px solid $border;
     }
 }
 
@@ -84,7 +92,7 @@
     padding: 45px 40px 32px;
     border-right: 1px solid $border;
 
-    &:nth-child(3) {
+    &:nth-last-child(1) {
         border-right: 0;
     }
 

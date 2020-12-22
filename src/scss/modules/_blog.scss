@@ -2,6 +2,12 @@
     @include media-up(md) {
         overflow: unset;
     }
+
+    & ~ .donate-button {
+        @include media-down(sm) {
+            display: none;
+        }
+    }
     
     &__header {
         padding: 60px 0 44px;

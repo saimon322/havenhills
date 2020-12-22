@@ -6,13 +6,128 @@
     padding: 0;
 }
 
-.fancybox-close-small {
-    @include media-up(md) {
-        width: 55px;
-        height: 55px;        
+.fancybox-infobar {
+    display: none;
+}
+
+.fancybox-toolbar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fancybox-image {
+    @include media-down(sm) {
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+        height: auto;
+    }
+}
+
+.fancybox-button {
+    background: none;
+    color: #fff;
+
+    .fancybox-is-zoomable & {
+        color: #fff;
     }
 
     @include media-down(sm) {
-        top: 10px !important;
+        color: $color-main;
+        transition: none !important;
     }
+
+    &--zoom,
+    &--play {
+        display: none !important;
+    }
+
+    &--close {
+        @include media-up(md) {
+            width: 110px;
+            height: 110px;
+            padding: 30px;
+            transition: .25s ease;
+
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
+
+        @include media-down(sm) {
+            top: 10px !important;
+        }
+    }
+
+    .fancybox-navigation & {
+        padding: 0 !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: unset !important;
+        transition: .25s ease !important;
+
+        @include media-down(md) {
+            width: 50px;
+            height: 50px;
+            top: auto;
+            bottom: 100px;
+        }
+
+        @include media-down(sm) {
+            bottom: 50px;
+        }
+
+        div {
+            display: none;
+        }
+
+        &--arrow_left {
+            left: 100px;
+            background-image: url(../img/svg-sprite/fancybox-left.svg);
+        
+            .fancybox-is-zoomable & {
+                background-image: url(../img/svg-sprite/fancybox-left.svg);
+            }
+
+            @include media-down(lg) {
+                left: 40px;
+            }
+
+            @include media-down(sm) {
+                left: 24px;
+                background-image: url(../img/svg-sprite/fancybox-left-black.svg);
+                transition: none;
+            }
+    
+            &:hover {
+                background-position-x: left;
+            }
+        }
+    
+        &--arrow_right {
+            right: 100px;
+            background-image: url(../img/svg-sprite/fancybox-right.svg);
+        
+            .fancybox-is-zoomable & {
+                background-image: url(../img/svg-sprite/fancybox-right.svg);
+            }
+
+            @include media-down(lg) {
+                right: 40px;
+            }
+
+            @include media-down(sm) {
+                right: 24px;
+                background-image: url(../img/svg-sprite/fancybox-right-black.svg);
+                transition: none;
+            }
+    
+            &:hover {
+                background-position-x: right;
+            }
+        }
+    }
+}
+
+.fancybox-close-small {
+    display: none !important;
 }

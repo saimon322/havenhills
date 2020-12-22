@@ -55,7 +55,6 @@
 </footer><!-- / .main-footer -->
 
 <a href="/donate.html" class="button donate-button">Donate</a>
-<script src="/wp-content/themes/havenhills/dist/js/app.bundle.js"></script>
 
 <?php wp_footer(); ?>
 

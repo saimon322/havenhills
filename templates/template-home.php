@@ -16,9 +16,17 @@ get_header('home'); ?>
                         <?php the_field('first_text'); ?>
                     </div>
                     <div class="main-offer__buttons">
-                        <a href="#" class="button main-offer__button">Call us</a>
-                        <span><?php the_field('first_buttons_text'); ?></span>
-                        <a href="#" class="button main-offer__button">Message us</a>
+                        <a href="tel:<?php the_field('phone', 'option'); ?>" 
+                           class="button main-offer__button">
+                            <?php the_field('first_button_call'); ?>
+                        </a>
+                        <span>
+                            <?php the_field('first_buttons_text'); ?>
+                        </span>
+                        <a href="mailto:<?php the_field('email', 'option'); ?>" 
+                           class="button main-offer__button">
+                            <?php the_field('first_button_message'); ?>
+                        </a>
                     </div>
                 </div>
                 <div class="main-offer__logo wow fadeInUp">
@@ -66,7 +74,7 @@ get_header('home'); ?>
         <section class="site-cards">
             <h2 class="visually-hidden">Site cards</h2>
             <div class="container site-cards__container">
-                <a href="article-2.html" class="site-cards__card site-card wow fadeIn" data-wow-delay="0">
+                <a href="article.html" class="site-cards__card site-card wow fadeIn" data-wow-delay="0">
                     <div class="site-card__logo">
                         <img src="/wp-content/themes/havenhills/dist/img/base/site-card-1.jpg" alt="">
                     </div>

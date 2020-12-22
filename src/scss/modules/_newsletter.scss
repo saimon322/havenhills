@@ -60,24 +60,29 @@
             display: block;
             width: 27px; height: 10px;
             background: url(img/svg-sprite/icon-arrow-white.svg) center no-repeat;
-            transition: transform .2s ease;
 
             @include media-down(sm) {
                 display: none;
             }
         }
-
-        &:hover:before {
-            transform: translateX(15px);
-        }
     }
 
     &__form {
+        max-width: unset;
+        
+        @include media-up(md) {
+            display: flex;
+        }
+
         .fields-list {
-            margin-right: 30px;
+            margin-top: 0;
+
+            @include media-up(md) {
+                flex-wrap: nowrap;
+                margin-right: 30px;
+            }
 
             @include media-down(sm) {
-                margin-right: 0;
                 margin-bottom: 46px;
             }
 
@@ -102,7 +107,7 @@
             color: #fff;
             -webkit-text-fill-color: #fff;
 
-            &:focus {
+            &:focus, &.is-filled {
                 border-color: #fff;
                 
                 & ~ label {
