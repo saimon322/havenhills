@@ -3,6 +3,8 @@
  * Footer
  */
 ?>
+
+<?php if ( !is_404() ): ?>
 <footer class="main-footer">
     <div class="site-container main-footer__container">
         <div class="main-footer__top">
@@ -54,6 +56,7 @@
         </div>
     </div>
 </footer><!-- / .main-footer -->
+<?php endif; ?>
 
 <!-- Donate button -->
 <?php $donate = get_field('donate_button', 'option'); ?>

@@ -11,6 +11,13 @@ if (!is_admin()) {
     wp_enqueue_script( 'main_script');
 }
 
+// Rename regular Posts to Blog
+function revcon_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Blog';
+}
+add_action( 'admin_menu', 'revcon_change_post_label' );
 
 
 // ACF Options Pages
@@ -30,33 +37,23 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title'  => 'Header settings',
+        'menu_title'  => 'Header',
+        'parent_slug' => 'theme-general-settings'
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title'  => 'Footer settings',
         'menu_title'  => 'Footer',
         'parent_slug' => 'theme-general-settings'
     ));
+
+    acf_add_options_sub_page(array(
+        'page_title'  => '404 page settings',
+        'menu_title'  => '404',
+        'parent_slug' => 'theme-general-settings'
+    ));
 }
-
-
-// Stick Admin Bar To The Top
-if (!is_admin()) {
-    function my_filter_head() {
-        remove_action('wp_head', '_admin_bar_bump_cb');
-    }
-    add_action('get_header', 'my_filter_head');
-
-    function stick_admin_bar() { ?>
-      <style>
-        body.admin-bar {margin-top:32px !important}
-        @media screen and (max-width: 782px) {body.admin-bar { margin-top:46px !important }}
-        @media screen and (max-width: 600px) {body.admin-bar { margin-top:46px !important } html #wpadminbar{ margin-top: -46px; }}
-      </style>
-    <?php }
-    add_action('admin_head', 'stick_admin_bar');
-    add_action('wp_head', 'stick_admin_bar');
-
-  }
-
-
 
 function limit_words($words, $limit, $append = ' &hellip;') {
   // Add 1 to the specified limit becuase arrays start at 0

@@ -30,10 +30,11 @@
                 <svg width='27' height='10'>
                     <use xlink:href='#icon-arrow'></use>
                 </svg>
-                Exit Site / Salir del Sitio
+                <?php the_field('exit_banner_text', 'option'); ?>
             </div>
-            <a href="https://google.com" class="button exit-banner__btn">
-                Click this banner / click aqui
+            <?php $exit_button = get_field('exit_banner_button', 'option'); ?>
+            <a href="<?php echo $exit_button['url']; ?>" class="button exit-banner__btn">
+                <?php echo $exit_button['title']; ?>
             </a>
         </div>
     </div>
@@ -41,35 +42,25 @@
     <div class="main-header__main">
         <div class="site-container main-header__container">
             <a href="/" class="main-header__logo">
-                <img src="/wp-content/themes/havenhills/dist/img/base/main-logo.svg" alt="">
+                <img src="<?php the_field('header_logo', 'option'); ?>" alt="">
             </a>
 
             <div class="main-header__menu">
                 <nav class="main-header__nav main-nav">
-                    <ul class="main-nav__list">
-                        <li class="<%=menu.services%>">
-                            <a href="/services.html">Services</a>
-                        </li>
-                        <li class="<%=menu.who%>">
-                            <a href="/who-we-are.html">Who we are</a>
-                        </li>
-                        <li class="<%=menu.difference%> menu-item-has-children">
-                            <a href="/make-a-difference.html">Make a difference</a>
-                            <ul class="sub-menu">
-                                <li><a href="/donate.html">Donate</a></li>
-                                <li><a href="/volunteers.html">Volunteer</a></li>
-                            </ul>
-                        </li>
-                        <li class="<%=menu.contact%>">
-                            <a href="/contacts.html">Contact us</a>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">English</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">EspaĆ±ol</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <?php
+                    $args = array(
+                        'theme_location' 	=> 'Main',
+                        'container'				=> '',
+                        'menu_class'      => 'main-nav__list',
+                        'items_wrap'      => '<ul class="main-nav__list">%3$s</ul>',
+                    );
+                    if(get_locale() == 'en_US'){
+                        $args['menu'] = 'main';
+                    }elseif (get_locale() == 'es_ES'){
+                        $args['menu'] = 'main-es';
+                    }
+                    wp_nav_menu($args);
+                    ?>
                 </nav><!-- / .main-header__nav -->
 
                 <div class="main-header__socials">

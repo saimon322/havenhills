@@ -28,6 +28,7 @@
     
     &__list {
         display: flex;
+        justify-content: space-between;
         padding-top: 17px;
 
         @include media-down(md) {
@@ -37,14 +38,8 @@
 
         & > li {
             &:not(:last-child) {
-                margin-right: 53px;
-    
-                @include media-down(lg) {
-                    margin-right: 40px;
-                }
     
                 @include media-down(md) {
-                    margin-right: 0;
                     border-bottom: 1px solid $border;
                 }
             }

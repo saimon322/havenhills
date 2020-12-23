@@ -78,8 +78,14 @@
             display: none;
         }
 
-        span {
-            margin: 0 14px;
+        a {
+            &:first-child {
+                margin-right: 14px;
+            }
+
+            &:last-child {
+                margin-left: 14px;
+            }
         }
     }
 

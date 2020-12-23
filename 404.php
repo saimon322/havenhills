@@ -1,36 +1,25 @@
-<?php
-/**
- * The template for displaying the 404 template in the Twenty Twenty theme.
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
- */
+<?php get_header(); ?>
 
-get_header();
-?>
+<main class="site-main">
+    <div class="site-container">
+        <section class="page404">
+            <div class="page404__logo">
+                <img src="<?php the_field('404_bg_image', 'option'); ?>" alt="">
+            </div>
+            <div class="page404__content">
+                <h1 class="visually-hidden">404</h1>
+                <div class="page404__title">
+                    <img src="<?php the_field('404_title_image', 'option'); ?>" alt="">
+                </div>
+                <p class="page404__text">
+                    <?php the_field('404_text', 'option'); ?>
+                </p>
+                <a href="<?php echo get_bloginfo('url') ?>" class="button page404__button">
+                    <?php the_field('404_button', 'option'); ?>
+                </a>
+            </div>
+        </section>
+    </div>
+</main><!-- / .site-main -->
 
-<main id="site-content" role="main">
-
-	<div class="section-inner thin error404-content">
-
-		<h1 class="entry-title"><?php _e( 'Page Not Found', 'twentytwenty' ); ?></h1>
-
-		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p></div>
-
-		<?php
-		get_search_form(
-			array(
-				'label' => __( '404 not found', 'twentytwenty' ),
-			)
-		);
-		?>
-
-	</div><!-- .section-inner -->
-
-</main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
-
-<?php
-get_footer();
+<?php get_footer(); ?>
