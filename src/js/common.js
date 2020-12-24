@@ -34,13 +34,19 @@ $(document).ready(function () {
         }
     });
 
-    // input add class on fill
+    // input change class on fill
     $('input, textarea').on('change', function () {
         if ($(this).val()) {
             $(this).addClass('is-filled');
         } else {
             $(this).removeClass('is-filled');
         }
+    })
+
+    $('.form').on('reset', function(){
+        $(this).find('input, textarea').each(function(){
+            $(this).removeClass('is-filled');
+        })
     })
 
     // textareas autosize

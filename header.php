@@ -12,14 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
     <?php wp_head(); ?>
-
-    <!-- Preloading fonts -->
-    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/BarlowCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/wp-content/themes/havenhills/dist/fonts/BarlowCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">  
 </head>
 <body>
 
@@ -55,9 +47,9 @@
                         'items_wrap'      => '<ul class="main-nav__list">%3$s</ul>',
                     );
                     if(get_locale() == 'en_US'){
-                        $args['menu'] = 'main';
+                        $args['menu'] = 'Main menu';
                     }elseif (get_locale() == 'es_ES'){
-                        $args['menu'] = 'main-es';
+                        $args['menu'] = 'Main menu (ES)';
                     }
                     wp_nav_menu($args);
                     ?>

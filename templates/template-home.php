@@ -77,40 +77,43 @@ get_header(); ?>
                     <div class="covid-19__text">
                         <?php the_field('covid_text'); ?>
                     </div>
-                    <div class="covid-19__buttons">
-                        <?php $button = get_field('covid_button');
-                            if ($button): ?>
+                    <?php $button = get_field('covid_button');
+                        if ($button): ?>
+                        <div class="covid-19__buttons">
                             <a href="<?php echo $button['url']; ?>" 
                                class="button covid-19__button">
                                 <?php echo $button['title']; ?>
                             </a>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </section><!-- /.covid-19 -->
 
         <section class="site-cards">
-            <h2 class="visually-hidden">Site cards</h2>
+            <h2 class="visually-hidden">
+                <?php the_field('important_cards_title'); ?>
+            </h2>
             <div class="container site-cards__container">
-                <a href="article.html" class="site-cards__card site-card wow fadeIn" data-wow-delay="0">
+                <?php if( have_rows('important_cards') ): ?>
+                <?php $i = 0;
+                while( have_rows('important_cards') ): the_row();
+                $logo = get_sub_field('image');
+                $link = get_sub_field('title');
+                ?>
+                <a href="<?php echo $link['url']; ?>" 
+                    class="site-cards__card site-card wow fadeIn" 
+                    data-wow-delay="<?php echo $i * 0.15 . 's'; ?>">
                     <div class="site-card__logo">
-                        <img src="/wp-content/themes/havenhills/dist/img/base/site-card-1.jpg" alt="">
+                        <img src="<?php echo $logo; ?>" alt="">
                     </div>
-                    <div class="site-card__title">Learn about domestic violence</div>
-                </a>
-                <a href="/our-impact.html" class="site-cards__card site-card wow fadeIn" data-wow-delay="0.15s">
-                    <div class="site-card__logo">
-                        <img src="/wp-content/themes/havenhills/dist/img/base/site-card-2.jpg" alt="">
+                    <div class="site-card__title">
+                        <?php echo $link['title']; ?>
                     </div>
-                    <div class="site-card__title">Our impact</div>
                 </a>
-                <a href="/blog.html" class="site-cards__card site-card wow fadeIn" data-wow-delay="0.30s">
-                    <div class="site-card__logo">
-                        <img src="/wp-content/themes/havenhills/dist/img/base/site-card-3.jpg" alt="">
-                    </div>
-                    <div class="site-card__title">Blog</div>
-                </a>
+                <?php $i++; ?>
+                <?php endwhile; ?>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -118,33 +121,18 @@ get_header(); ?>
             <div class="newsletter__main">
                 <div class="container wow fadeInUp" data-wow-offset="150">
                     <div class="newsletter__top">
-                        <h2 class="newsletter__title">Newsletter</h2>
+                        <h2 class="newsletter__title">
+                            <?php the_field('newsletter_title'); ?>
+                        </h2>
                         <div class="newsletter__text">
-                            <p>Haven Hills offers shelter from domestic violence. </p>
-                            <p>Learn how to help us stand up to domestic violence by subscribing to our newsletter today.</p>
+                            <?php the_field('newsletter_text'); ?>
                         </div>
                     </div>
-                    <form action="#" class="form newsletter__form">
-                        <ul class="form__fields-list fields-list">
-                            <li class="fields-list__item">
-                                <input type="text" name="name" id="newsletter-name">
-                                <label for="newsletter-name">Name</label>
-                            </li>
-                            <li class="fields-list__item">
-                                <input type="text" name="lastname" id="newsletter-lastname">
-                                <label for="newsletter-lastname">Last Name</label>
-                            </li>
-                            <li class="fields-list__item">
-                                <input type="email" name="email" id="newsletter-email">
-                                <label for="newsletter-email">Email</label>
-                            </li>
-                        </ul>
-                        <button type="submit" class="button">Get involved</button>
-                    </form>
+                    <?php echo do_shortcode( get_field('newsletter_form') ); ?>
                 </div>
             </div>
             <div class="newsletter__bottom">
-                Lifting up survivors
+                <?php the_field('newsletter_bottom'); ?>
             </div>
         </section>
     </div>

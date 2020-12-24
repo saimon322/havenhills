@@ -72,6 +72,7 @@
         
         @include media-up(md) {
             display: flex;
+            flex-wrap: wrap;
         }
 
         .fields-list {
@@ -87,6 +88,10 @@
             }
 
             &__item {
+                @include media-up(md) {
+                    margin-bottom: 0;
+                }
+
                 &:not(:last-child) {
                     margin-right: 23px;
 
@@ -95,23 +100,23 @@
                         margin-bottom: 34px;
                     }
                 }
-            }
-        }
 
-        label {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        input, textarea {
-            border-color: rgba(255, 255, 255, 0.5);
-            color: #fff;
-            -webkit-text-fill-color: #fff;
-
-            &:focus, &.is-filled {
-                border-color: #fff;
-                
-                & ~ label {
+                label {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+        
+                input, textarea {
+                    border-color: rgba(255, 255, 255, 0.5);
                     color: #fff;
+                    -webkit-text-fill-color: #fff;
+        
+                    &:focus, &.is-filled {
+                        border-color: #fff;
+                        
+                        & ~ label {
+                            color: #fff;
+                        }
+                    }
                 }
             }
         }
@@ -123,6 +128,10 @@
             &:hover {
                 background-color: $color-yellow;
             }
+        }
+
+        .wpcf7-response-output {
+            color: #fff;
         }
     }
 

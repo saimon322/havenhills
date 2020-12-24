@@ -44,9 +44,10 @@
         padding: 15px 0;
         border-bottom: 1px solid $border;
 
-        &:last-of-type {
+        &:nth-child(odd):last-child {
             width: 100%;
             border: 0;
+            padding-bottom: 0;
         }
 
         @include media-up(md) {
@@ -61,7 +62,7 @@
 
     &__text {
         max-width: 583px;
-        margin-top: -5px;
+        margin-top: 10px;
         margin-bottom: 23px;
         font-size: 14px;
     }

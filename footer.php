@@ -28,7 +28,7 @@
                     $link = get_sub_field('social_url');
                     ?>
                     <a href="<?php echo $link; ?>" target="_blank" rel="noopener noreferrer">
-                        <svg width='15' height='15'>
+                        <svg width='23' height='23'>
                             <use xlink:href='#icon-<?php echo $name; ?>'></use>
                         </svg>
                     </a>
@@ -38,11 +38,20 @@
             </div>
 
             <nav class="main-footer__nav footer-nav">
-                <ul class="footer-nav__list">
-                    <li><a href="/who-we-are.html">Our Board</a></li>
-                    <li><a href="/donate.html">Donate</a></li>
-                    <li><a href="terms-of-use.html">Terms of Use / Privacy Policy</a></li>
-                </ul>
+                <?php
+                $args = array(
+                    'theme_location' 	=> 'Footer',
+                    'container'				=> '',
+                    'menu_class'      => 'footer-nav__list',
+                    'items_wrap'      => '<ul class="footer-nav__list">%3$s</ul>',
+                );
+                if(get_locale() == 'en_US'){
+                    $args['menu'] = 'Footer menu';
+                }elseif (get_locale() == 'es_ES'){
+                    $args['menu'] = 'Footer menu (ES)';
+                }
+                wp_nav_menu($args);
+                ?>
             </nav><!-- / .footer-nav -->
         </div>
 

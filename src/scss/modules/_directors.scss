@@ -45,12 +45,19 @@
     border-right: 1px solid $border;
     border-bottom: 1px solid $border;
 
-    &:nth-child(4n) {
-        border-right: 0;
+    @include media-up(lg) {
+        &:nth-child(4n) {
+            border-right: 0;
+        }
     }
 
-    @include media-down(md) {
+    @include media-only(md) {
         padding: 30px 20px 20px;
+        width: calc(100% / 3);
+
+        &:nth-child(3n) {
+            border-right: 0;
+        }
     }
 
     @include media-down(sm) {

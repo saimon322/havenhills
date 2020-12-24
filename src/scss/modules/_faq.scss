@@ -1,18 +1,12 @@
 .faq {
+    padding-bottom: 65px;
+
     &__list {
         display: flex;
         flex-wrap: wrap;
 
         @include media-down(sm) {
             display: block;
-        }
-    }
-
-    &__pagination {
-        padding: 49px 0 65px;
-
-        @include media-down(sm) {
-            padding: 59px 0 66px;
         }
     }
 }

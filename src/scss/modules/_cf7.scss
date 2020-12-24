@@ -1,0 +1,17 @@
+div.wpcf7 .ajax-loader {
+    display: none !important;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    width: 100%;
+    margin-bottom: 0 !important;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, 
+.wpcf7 form.unaccepted .wpcf7-response-output {
+    border-color: $color-yellow !important;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    border-color: $color-green !important;
+}
