@@ -163,7 +163,7 @@ $(document).ready(function () {
     });
 
     // Contacts banner
-    $("#contacts-reason-4").on("change", function(){
+    $("#contacts-reasons input").last().on("change", function(){
         if ($(this).is(":checked")) {
             $(".form__banner").fadeIn();
         } else {

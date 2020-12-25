@@ -68,11 +68,13 @@
     }
 
     &__form {
-        max-width: unset;
-        
-        @include media-up(md) {
-            display: flex;
-            flex-wrap: wrap;
+        .form {
+            max-width: unset;
+            
+            @include media-up(md) {
+                display: flex;
+                flex-wrap: wrap;
+            }
         }
 
         .fields-list {

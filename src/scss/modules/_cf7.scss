@@ -2,6 +2,7 @@ div.wpcf7 .ajax-loader {
     display: none !important;
 }
 
+// Output messages
 .wpcf7 form .wpcf7-response-output {
     width: 100%;
     margin-bottom: 0 !important;
@@ -14,4 +15,65 @@ div.wpcf7 .ajax-loader {
 
 .wpcf7 form.sent .wpcf7-response-output {
     border-color: $color-green !important;
+}
+
+// Checkbox and radio
+.wpcf7-list-item {
+    display: block !important;
+    margin-left: 0 !important;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+    
+    .wpcf7-list-item-label {
+        position: relative;
+        display: block;
+        padding-left: 25px;
+        min-height: 24px;
+        cursor: pointer;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background: #F4F4FB;
+            box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 5px;
+            width: 6px;
+            height: 6px;
+            background: $color-main-2;
+            transform: scale(0);
+            opacity: 0;
+            transition: .25s ease;
+        }
+    }
+
+    input:checked + .wpcf7-list-item-label:after {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

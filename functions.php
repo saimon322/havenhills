@@ -153,25 +153,43 @@ add_filter('wpcf7_form_elements', function($content) {
     return $content;
 });
 
+// Main site phone shortcode
+add_shortcode( 'phone', 'phone_func' );
+
+function phone_func(){
+    $phone = get_field("phone", "option");
+    $link = '<a class="nowrap" href="tel:' . $phone . '">' . $phone . '</a>';
+    return $link;
+}
+
+// Main site email shortcode
+add_shortcode( 'email', 'email_func' );
+
+function email_func(){
+    $email = get_field("email", "option");
+    $link = '<a class="nowrap" href="mailto:' . $email . '">' . $email . '</a>';
+    return $link;
+}
+
 // Donate table shortcode
 add_shortcode( 'donate_table', 'donate_table_func' );
 
 function donate_table_func(){
     $table = '';
 	if( have_rows('donate_table') ):
-    $table += '<div class="donate-table">';
-    $table += '<ul class="donate-table__list">';
+    $table .= '<div class="donate-table">';
+    $table .= '<ul class="donate-table__list">';
     while( have_rows('donate_table') ): the_row();
-        $table += '<li class="donate-table__item">';
-        $table += '<b>' . get_sub_field('amount') . '</b> ';
-        $table += get_sub_field('description');
-        $table += '</li>';
+        $table .= '<li class="donate-table__item">';
+        $table .= '<b>' . get_sub_field('amount') . '</b> ';
+        $table .= get_sub_field('description');
+        $table .= '</li>';
     endwhile;
-    $table += '</ul>';
-    $table += '<div class="donate-table__text">';
-    $table += the_field('donate_table_text');
-    $table += '</div>';
-    $table += '</div>';
+    $table .= '</ul>';
+    $table .= '<div class="donate-table__text">';
+    $table .= get_field('donate_table_text');
+    $table .= '</div>';
+    $table .= '</div>';
     endif; 
 
     return $table;

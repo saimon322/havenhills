@@ -71,7 +71,7 @@ get_header();
         <div class="site-container">
             <section class="blog">
                 <div class="blog__header">
-                    <h1 class="blog__title">Blog</h1>
+                    <h1 class="blog__title"><?=get_the_title( get_option('page_for_posts', true) )?></h1>
                     <div class="blog__filter">
                         <div class="filter">
                             Sort by:
@@ -101,6 +101,7 @@ get_header();
                         <div class="blog__pagination">
                             <nav class="pagination">
                                 <?php kriesi_pagination() ?>
+                            </nav>
                         </div>
                     </div><!-- /.blog__content -->
                     <? get_template_part( 'templates/blog/blog', 'aside');?>

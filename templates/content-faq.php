@@ -34,7 +34,9 @@ $search = get_field('search');
                                                 <p><?=$faq['content']?></p>
                                             </div>
                                         </div>
-                                        <a href="#faq-modal" class="faq-item__button">Read more</a>
+                                        <a href="#faq-modal" class="faq-item__button">
+                                            <?php the_field('read_more_button'); ?>
+                                        </a>
                                     </li>
                                 <?endif;?>
                             <?else:?>
@@ -45,7 +47,9 @@ $search = get_field('search');
                                             <p><?=$faq['content']?></p>
                                         </div>
                                     </div>
-                                    <a href="#faq-modal" class="faq-item__button">Read more</a>
+                                    <a href="#faq-modal" class="faq-item__button">
+                                        <?php the_field('read_more_button'); ?>
+                                    </a>
                                 </li>
                             <?endif;?>
                         <?  endforeach;

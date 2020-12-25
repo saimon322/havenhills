@@ -128,7 +128,9 @@ get_header(); ?>
                             <?php the_field('newsletter_text'); ?>
                         </div>
                     </div>
-                    <?php echo do_shortcode( get_field('newsletter_form') ); ?>
+                    <div class="newsletter__form">
+                        <?php echo do_shortcode( get_field('newsletter_form') ); ?>
+                    </div>
                 </div>
             </div>
             <div class="newsletter__bottom">
